@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: web-container
-          image: rehandevops/webapp:latest
+          image: rehandevops/webapp-cicd:latest
           ports:
             - containerPort: 80
           imagePullPolicy: Always
