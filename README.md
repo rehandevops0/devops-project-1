@@ -1,3 +1,4 @@
+
 This project demonstrates a complete CI/CD pipeline where code is automatically built, containerized, and deployed to a Kubernetes cluster using Jenkins.
 
 📌 Project Architecture
@@ -200,6 +201,8 @@ sudo systemctl restart containerd
 🖼 Image Debugging
 kubectl describe pod <pod-name>
 sudo ctr images pull docker.io/rehandevops/webapp-cicd:latest
+
+
 
 
 
