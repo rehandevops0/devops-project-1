@@ -120,8 +120,8 @@ kubectl get svc
 
 
 Open your browser:
-
 http://<worker-node-public-ip>:<node-port>
+eg : http://3.27.63.105:32238/ 
 
 🔍 Troubleshooting
 ❌ ImagePullBackOff
@@ -149,6 +149,59 @@ kubectl apply -f deployment.yaml
 ✔ Image pushed to DockerHub
 ✔ Kubernetes deployment updated
 ✔ Web app successfully accessible
+
+
+
+📌 Kubernetes Commands Learned During This Project
+
+Below are the essential Kubernetes commands used while deploying the CI/CD project end-to-end.
+
+🚀 Cluster Info
+kubectl cluster-info
+kubectl version
+kubectl get nodes
+kubectl describe node <node-name>
+
+📦 Pods
+kubectl get pods
+kubectl get pods -o wide
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl delete pod <pod-name>
+
+🛠 Deployments
+kubectl get deployments
+kubectl apply -f deployment.yaml
+kubectl rollout status deployment/webapp
+kubectl rollout restart deployment webapp
+kubectl rollout undo deployment/webapp
+kubectl describe deployment webapp
+
+🌐 Services
+kubectl get svc
+kubectl apply -f service.yaml
+kubectl describe svc webapp-service
+
+🔍 Debugging
+kubectl get events --sort-by=.metadata.creationTimestamp
+kubectl apply -f <file> --dry-run=client --validate=true
+kubectl get all
+
+🗂 Namespaces
+kubectl get ns
+kubectl create ns dev
+kubectl apply -f deployment.yaml -n dev
+
+🧰 Worker Node Commands
+systemctl status kubelet
+sudo systemctl restart kubelet
+sudo systemctl restart containerd
+
+🖼 Image Debugging
+kubectl describe pod <pod-name>
+sudo ctr images pull docker.io/rehandevops/webapp-cicd:latest
+
+
 
 
 
